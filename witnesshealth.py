@@ -11,15 +11,15 @@ from bitshares.asset import Asset
 from bitshares import BitShares
 
 # witness/delegate/producer account name to check
-witness = "roelandp"
+witness = "witness.yao"
 backupsigningkey = "BTS6XXXXXX"                 # FALL BACK Hot Swappable Backup Signing Key
 witnessurl = "https://bitsharestalk.org/index.php/topic,24017.msg304832.html" # Your Witness Announcement url
 
-telegram_token = ""	                            # Create your Telegram bot at @BotFather (https://telegram.me/botfather)
-telegram_id    = ""                             # Get your telegram id at @MyTelegramID_bot (https://telegram.me/mytelegramid_bot)
+telegram_token = "522686258:AAGUGSZvRa5zB5tNHT8mm-FOHtQkUXVfW8E"	                            # Create your Telegram bot at @BotFather (https://telegram.me/botfather)
+telegram_id    = "-221925541"                             # Get your telegram id at @MyTelegramID_bot (https://telegram.me/mytelegramid_bot)
 walletpwd      = ""                             # Your UPTICK wallet unlock code
 
-websocket		= "wss://node.bitshares.eu" #seednode to connect to!
+websocket		= "wss://bitshares.openledger.info/ws" #seednode to connect to!
 seed_host               = "seed.roelandp.nl"    # hostname/ip for the public seed to monitor
 seed_port               = 1776                  # port for the public seed to monitor (bitshares default = 1776)
 seed_timeout_check      = int(10)               # seconds before timeout is called on telnet public seed operation.
@@ -98,6 +98,7 @@ def check_witness():
 if __name__ == '__main__':
     while True:
         check_witness()
+        alert_witness("hello witness.yao...")
         sys.stdout.flush()
         loopcounter += 1
         if(loopcounter % check_rate_feeds_seed_ratio == 0): 
